@@ -16,7 +16,7 @@ source:
 build:
   merge_build_host: True  # [win]
   number: 0
-  skip: true  # [win]
+  skip: true  # [win32]
   rpaths:
     - lib/R/lib/
     - lib/
@@ -31,7 +31,6 @@ requirements:
     - {{posix}}grep              # [win]
     - {{posix}}autoconf
     - {{posix}}automake-wrapper  # [win]
-    - {{posix}}automake          # [win]
     - {{posix}}pkg-config
     - {{posix}}make
     - {{posix}}sed  # [win]
