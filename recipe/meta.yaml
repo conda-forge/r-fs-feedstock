@@ -1,7 +1,6 @@
-{% set version = '1.2.3' %}
+{% set version = "1.2.4" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
-{% set cran_mirror = 'https://cran.r-project.org' %}
 
 package:
   name: r-fs
@@ -12,7 +11,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/fs_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/fs/fs_{{ version }}.tar.gz
-  sha256: c567fd7f10f777eae5c92cbe67e6430e235be3fbdcbabc8b7e62994421fa6dcd
+  sha256: 8ac22ded78c88cdef991fa8509ecc9e7311ba7fea4904ce2527b0342645b16ff
 
 build:
   merge_build_host: True  # [win]
