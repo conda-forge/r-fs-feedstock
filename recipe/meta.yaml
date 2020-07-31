@@ -37,11 +37,9 @@ requirements:
     - {{ posix }}zip               # [win]
   host:
     - r-base
-    - r-rcpp
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
-    - r-rcpp
 
 test:
   commands:
