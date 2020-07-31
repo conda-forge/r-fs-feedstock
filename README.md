@@ -3,7 +3,7 @@ About r-fs
 
 Home: http://fs.r-lib.org, https://github.com/r-lib/fs
 
-Package license: GPL-3
+Package license: GPL-3.0-only
 
 Feedstock license: BSD-3-Clause
 
