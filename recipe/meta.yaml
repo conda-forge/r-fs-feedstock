@@ -14,7 +14,7 @@ source:
 
 build:
   merge_build_host: true  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -60,6 +60,7 @@ extra:
   recipe-maintainers:
     - conda-forge/r
     - nick-youngblut
+    - mfansler
 
 # Package: fs
 # Title: Cross-Platform File System Operations Based on 'libuv'
