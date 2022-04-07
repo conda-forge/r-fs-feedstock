@@ -14,13 +14,15 @@ source:
 
 build:
   merge_build_host: true  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
+    - cross-r-base {{ r_base }}  # [build_platform != target_platform]
+    - gnuconfig  # [unix]
     - {{ compiler('c') }}              # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
     - {{ compiler('cxx') }}            # [not win]
@@ -58,6 +60,7 @@ extra:
   recipe-maintainers:
     - conda-forge/r
     - nick-youngblut
+    - mfansler
 
 # Package: fs
 # Title: Cross-Platform File System Operations Based on 'libuv'
