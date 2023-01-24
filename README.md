@@ -1,13 +1,15 @@
 About r-fs
 ==========
 
-Home: http://fs.r-lib.org, https://github.com/r-lib/fs
+Home: http://fs.r-lib.org
 
-Package license: GPL-3.0-only
+Package license: MIT
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-fs-feedstock/blob/main/LICENSE.txt)
 
 Summary: A cross-platform interface to file system operations, built on top of the 'libuv' C library.
+
+Development: https://github.com/r-lib/fs
 
 Current build status
 ====================
@@ -233,6 +235,5 @@ Feedstock Maintainers
 =====================
 
 * [@conda-forge/r](https://github.com/conda-forge/r/)
-* [@mfansler](https://github.com/mfansler/)
 * [@nick-youngblut](https://github.com/nick-youngblut/)
 
