@@ -1,4 +1,4 @@
-{% set version = "1.6.1" %}
+{% set version = "1.4.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/fs_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/fs/fs_{{ version }}.tar.gz
-  sha256: faf1e421a2c270c60c0a30c74e1a48faad45b339163716102d77d64d23d76732
+  sha256: 47666e3dcd07683d090bcaf9e0fad945e5c6c729ea1463330d1c21df736f50c7
 
 build:
   merge_build_host: true  # [win]
@@ -21,27 +21,27 @@ build:
 
 requirements:
   build:
-    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
-    - gnuconfig  # [unix]
-    - {{ compiler('c') }}          # [not win]
-    - {{ compiler('m2w64_c') }}    # [win]
-    - {{ compiler('cxx') }}        # [not win]
-    - {{ compiler('m2w64_cxx') }}  # [win]
-    - {{ posix }}filesystem        # [win]
-    - {{ posix }}sed               # [win]
-    - {{ posix }}grep              # [win]
-    - {{ posix }}autoconf
-    - {{ posix }}automake          # [not win]
-    - {{ posix }}automake-wrapper  # [win]
-    - {{ posix }}pkg-config
-    - {{ posix }}make
-    - {{ posix }}coreutils         # [win]
-    - {{ posix }}zip               # [win]
+    - {{ compiler('c') }}        # [not win]
+    - {{ compiler('cxx') }}      # [not win]
+    - {{ compiler('m2w64_c') }}        # [win]
+    - {{ compiler('m2w64_cxx') }}        # [win]
+    - {{posix}}filesystem        # [win]
+    - {{posix}}sed               # [win]
+    - {{posix}}grep              # [win]
+    - {{posix}}autoconf
+    - {{posix}}automake          # [not win]
+    - {{posix}}automake-wrapper  # [win]
+    - {{posix}}pkg-config
+    - {{posix}}make
+    - {{posix}}coreutils         # [win]
+    - {{posix}}zip               # [win]
   host:
     - r-base {{ r_version }}
+    - r-rcpp
   run:
     - r-base {{ r_version }}
-    - {{ native }}gcc-libs         # [win]
+    - {{native}}gcc-libs         # [win]
+    - r-rcpp
 
 test:
   commands:
@@ -49,17 +49,39 @@ test:
     - "\"%R%\" -e \"library('fs')\""  # [win]
 
 about:
-  home: http://fs.r-lib.org
-  dev_url: https://github.com/r-lib/fs
-  license: MIT
+  home: http://fs.r-lib.org, https://github.com/r-lib/fs
+  license: GPL-3
   summary: A cross-platform interface to file system operations, built on top of the 'libuv' C library.
-  license_family: MIT
-  license_file:
-    - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
-    - LICENSE
-    - inst/COPYRIGHTS
+  license_family: GPL3
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
     - conda-forge/r
     - nick-youngblut
+
+# Package: fs
+# Title: Cross-Platform File System Operations Based on 'libuv'
+# Version: 1.2.7
+# Authors@R: c( person("Jim", "Hester", email = "james.f.hester@gmail.com", role = c("aut", "cre")), person("Hadley", "Wickham", , "hadley@rstudio.com", "aut"), person("libuv project contributors", role = "cph", comment = "libuv library"), person("Joyent, Inc. and other Node contributors", role = "cph", comment = "libuv library"), person("RStudio", role = c("cph", "fnd")) )
+# Description: A cross-platform interface to file system operations, built on top of the 'libuv' C library.
+# Depends: R (>= 3.1)
+# License: GPL-3
+# Encoding: UTF-8
+# LazyData: true
+# ByteCompile: true
+# LinkingTo: Rcpp
+# Imports: methods, Rcpp
+# SystemRequirements: GNU make
+# RoxygenNote: 6.1.1
+# URL: http://fs.r-lib.org, https://github.com/r-lib/fs
+# BugReports: https://github.com/r-lib/fs/issues
+# Copyright: file COPYRIGHTS
+# Suggests: testthat, covr, pillar (>= 1.0.0), crayon, rmarkdown, knitr, withr,
+# VignetteBuilder: knitr
+# NeedsCompilation: yes
+# Packaged: 2019-03-19 18:52:57 UTC; jhester
+# Author: Jim Hester [aut, cre], Hadley Wickham [aut], libuv project contributors [cph] (libuv library), Joyent, Inc. and other Node contributors [cph] (libuv library), RStudio [cph, fnd]
+# Maintainer: Jim Hester <james.f.hester@gmail.com>
+# Repository: CRAN
+# Date/Publication: 2019-03-19 23:20:03 UTC
