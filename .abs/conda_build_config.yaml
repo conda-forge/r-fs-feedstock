@@ -1,0 +1,8 @@
+r_version:
+  - 3.6
+cran_mirror:
+  - https://cran.microsoft.com/snapshot/2023-03-06/
+cross_compiler_target_platform:
+  - win-64                     # [win]
+target_platform:
+  - win-64                     # [win]
