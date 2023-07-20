@@ -3,6 +3,7 @@ About r-fs-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-fs-feedstock/blob/main/LICENSE.txt)
 
+
 About r-fs
 ----------
 
@@ -13,6 +14,7 @@ Package license: MIT
 Summary: A cross-platform interface to file system operations, built on top of the 'libuv' C library.
 
 Development: https://github.com/r-lib/fs
+
 About r-fs
 ----------
 
