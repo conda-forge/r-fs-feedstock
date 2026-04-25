@@ -1,4 +1,4 @@
-{% set version = "1.6.7" %}
+{% set version = "2.1.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/fs_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/fs/fs_{{ version }}.tar.gz
-  sha256: e8f0a8f4b15177166c9530cd922e38705421467f05ec55500b28bca5864be411
+  sha256: 7088af1117d65c4ceb144b532e323f197fc8243b1d704bf6edf40774789829cd
 
 build:
   number: 0
@@ -39,7 +39,7 @@ requirements:
     - {{ posix }}zip               # [win]
   host:
     - r-base
-    - libuv                        # [win]
+    - libuv
     - zlib                         # [win]
   run:
     - r-base
